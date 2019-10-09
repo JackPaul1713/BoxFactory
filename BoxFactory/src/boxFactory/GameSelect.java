@@ -1,4 +1,4 @@
-package gameSelect;
+package boxFactory;
 
 public class GameSelect
 {
