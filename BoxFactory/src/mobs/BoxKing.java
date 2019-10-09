@@ -1,4 +1,4 @@
-package objects;
+package mobs;
 
 public class BoxKing
 {

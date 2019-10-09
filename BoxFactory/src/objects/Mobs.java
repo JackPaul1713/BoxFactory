@@ -1,6 +1,8 @@
 package objects;
 
-public class Mobs
+abstract class Mobs
 {
 
+	
+	
 }

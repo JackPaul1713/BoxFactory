@@ -1,4 +1,4 @@
-package objects;
+package equipment;
 
 public class Clothing
 {
