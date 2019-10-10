@@ -1,6 +1,6 @@
 package boxFactory;
 
-public class GameOver
+public class Loose
 {
 
 }

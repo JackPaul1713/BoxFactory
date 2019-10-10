@@ -1,4 +1,4 @@
-package menus;
+package game;
 
 public class ItemMenu
 {

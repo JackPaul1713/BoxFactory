@@ -1,6 +1,6 @@
 package game;
 
-public class GameOver
+public class ShopMenu
 {
 
 }

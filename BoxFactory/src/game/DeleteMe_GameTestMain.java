@@ -1,6 +1,6 @@
 package game;
 
-public class gameTestMain
+public class DeleteMe_GameTestMain
 {
 
 	public static void main(String[] args)

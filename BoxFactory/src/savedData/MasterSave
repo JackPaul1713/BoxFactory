@@ -1,0 +1,59 @@
+*FactoryName
+*CharacterName
+	FactoryStats:
+		MakeSpeed *numb
+		MobLikelyhood *numb
+		MoneyLikelyhood *numb
+		JunkLikelyhood *numb
+		ItemLikelyhood *numb
+		OpeningSpeed *numb
+		NumbOfBoxesMade *numb
+	CharacterStats:
+		Heath *numb
+		MaxHealth *numb
+		Strength *numb
+		Energy *numb
+		Money *numb
+	Upgrades:
+		FasterConvarabelt *tOrF
+		StudierCardboard *tOrF
+		CoolerBoxes *tOrF
+		CleanerBoxs *tOrF
+		MoreBoxyBoxes *tOrF
+		OpeningMaster *tOrF
+		MoreBoxes1 *tOrF
+		MoreBoxes2 *tOrF
+	Items:
+	Hats
+		PaperBag *tOrF
+		FedExHat *tOrF
+		BoxHelmet *tOrF
+		BoxCrown *tOrF
+	Clothing
+		UPSUniform *tOrF
+		TapeWrap *tOrF
+		BoxArmor *tOrF
+	Shoes
+		OldSlippers *tOrF
+		RubberGloves *tOrF
+		TissueBoxes *tOrF
+		LeftSock *tOrF
+	Weapons
+		CarKeys *tOrF
+		ToothBrush *tOrF
+		RustyScrewDriver *tOrF
+		CardBoardSword *tOrF
+		BoxingGloves *tOrF
+		TapeGun *tOrF
+	Shields
+		PieceOfCardboard *tOrF
+		SturdyPieceOfCardboard *tOrF
+		PlasticBinLid *tOrF
+		TrashCanLid *tOrF
+	Food
+		Onion - *numb
+		MarshMello - *numb
+		MagicMushroom - *numb
+		PackingPenut *numb
+	Stamps: numb
+	

@@ -1,8 +1,5 @@
 package boxFactory;
 
-import game.*;
-import gameSelect.*;
-
 public class BoxFactoryMain
 {
 
@@ -11,46 +8,37 @@ public class BoxFactoryMain
 		
 		//variables
 		
-		String nOrLGame = "";
+		boolean playing = true;
+		boolean loose = false;
+		String gameSelection = "";
 		
-		//intro
+		//action
 		
 		SetScreenSize.setScreenSize();
-		Intro.intro();
-		nOrLGame = GameSelect.gameSelect();
 		
-		//gameSelect
-		
-		for (int gs = 0; gs < 1;)
+		while(playing = true)
 		{
-
-			if (nOrLGame.equals("new"))
+			
+			playing = TitleScreen.intro();
+			
+			if(playing = true)
 			{
-
-				NewGame.newGame();
-				gs = 1;
-
-			} 
-			else if (nOrLGame.equals("load"))
-			{
-
-				LoadGame.loadGame();
-				gs = 1;
-
-			} 
-			else
-			{
-
-				System.out.println("Invalid input. Type \"new\" or \"load\".");
-				nOrLGame = GameSelect.gameSelect();
-
+				
+				gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
+				loose = Game.game(gameSelection); //loadGameData, game, loose.true exit.false
+				
+				if (loose = true)
+				{
+					
+					Loose.loose(gameSelection); //deleteGameData
+					
+				}
+				
 			}
-
+			
 		}
-		
-		//game
-		
-		game.Game();
+        
+		Goodbye.goodbye();
 		
 	}
 	

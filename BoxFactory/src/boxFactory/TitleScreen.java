@@ -1,6 +1,6 @@
 package boxFactory;
 
-public class Intro
+public class TitleScreen
 {
 
 	public static void intro()
