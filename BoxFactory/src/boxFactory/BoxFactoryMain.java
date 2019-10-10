@@ -19,7 +19,7 @@ public class BoxFactoryMain
 		while(playing = true)
 		{
 			
-			playing = TitleScreen.intro();
+			playing = TitleScreen.titleScreen();
 			
 			if(playing = true)
 			{

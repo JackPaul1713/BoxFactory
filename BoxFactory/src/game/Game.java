@@ -8,7 +8,7 @@ import junk.*;
 public class Game
 {
 
-	public static void game()
+	public static void game(String gameSelection)
 	{
 		
 		//saveLoader
@@ -22,52 +22,47 @@ public class Game
 		String savedGame3 = "SavedGame3.txt";
 		
 		String line = null;
-		FileReader fileReader1 = new FileReader(savedGame1);
-        BufferedReader bufferedReader1 = new BufferedReader(fileReader1);
+		FileReader fileReader;
 		
-		//characterStats
+		if(gameSelection.substring(0, 1).equals("l"))
+		{
+			
+			if(gameSelection.substring(1, 2).equals("1"))
+			{
+				
+				fileReader = new FileReader(savedGame1);
+				
+			}
+			else if(gameSelection.substring(1, 2).equals("2"))
+			{
+
+				fileReader = new FileReader(savedGame2);
+				
+			}
+			else if(gameSelection.substring(1, 2).equals("3"))
+			{
+				
+				fileReader = new FileReader(savedGame3);
+				
+			}
+			
+		}
+		else
+		{
+			
+			fileReader = new FileReader(defaultSave);
+			
+		}
 		
-		String charName = "Mife Tyson";
-		int health = 100;
-		int maxHealth = 100;
-		int strength = 10;
-		int defence = 10;
-		int money = 0;
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
-		int onionAmmount = 0;
-		int marshMelloAmmount = 0; 
-		int magicShroomAmmount = 0;
-		int packingPenutAmmount = 0;
+		//loadData
+        
+        String factoryName = bufferedReader.readLine();
+		String charName = bufferedReader.readLine();
 		
-		boolean ownPaperBag = false;
-		boolean ownFedExHat = false;
-		boolean ownBoxHelmet = false;
-		boolean ownBoxCrown = false;
+		bufferedReader.readLine();
 	
-		boolean ownUPSUniform = false;
-		boolean ownTapeWrap = false;
-		boolean ownBoxArmor = false;
-		
-		boolean ownOldSlippers = false;
-		boolean ownRubberGloves = false;
-		boolean ownTissueBoxes = false;
-		boolean ownLeftSock = false;
-
-		boolean ownCarKeys = false;
-		boolean ownToothBrush = false;
-		boolean ownRustyScrewDriver = false;
-		boolean ownCardBoardSword = false;
-		boolean ownBoxingGloves = false;
-		boolean ownTapeGun = false;
-
-		boolean ownPieceOfCardboard = false;
-		boolean ownSturdyPieceOfCardboard = false;
-		boolean ownPlasticBinLid = false;
-		boolean ownTrashCanLid = false;
-		
-		//factoryStats
-		
-		String factoryName = "Box Factory";
 		int MakeSpeed = 20;
 		int MobLikelyhood = 10;
 		int MoneyLikelyhood = 40;
@@ -77,25 +72,82 @@ public class Game
 		int OpeningSpeed = 20;
 		int NumbOfBoxesMade = 1;
 		
-		boolean FasterConvarabelt = false;
-		boolean StudierCardboard = false;
-		boolean CoolerBoxes = false;
-		boolean CleanerBoxs = false;
-		boolean MoreBoxyBoxes = false;
-		boolean OpeningMaster  = false;
-		boolean MoreBoxes1 = false;
-		boolean MoreBoxes2 = false;
+		bufferedReader.readLine();
 		
-		//food - fix costs
+		int health = Integer.parseInt(bufferedReader.readLine());
+		int maxHealth = Integer.parseInt(bufferedReader.readLine());
+		int strength = Integer.parseInt(bufferedReader.readLine());
+		int defence = Integer.parseInt(bufferedReader.readLine());
+		int money = Integer.parseInt(bufferedReader.readLine());
+		
+		bufferedReader.readLine();
+
+		boolean FasterConvarabelt = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean StudierCardboard = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean CoolerBoxes = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean CleanerBoxs = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean MoreBoxyBoxes = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean OpeningMaster  = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean MoreBoxes1 = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean MoreBoxes2 = Boolean.parseBoolean(bufferedReader.readLine());
+		
+		bufferedReader.readLine();
+		
+		boolean ownPaperBag = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownFedExHat = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownBoxHelmet = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownBoxCrown = Boolean.parseBoolean(bufferedReader.readLine());
+	
+		bufferedReader.readLine();
+		
+		boolean ownUPSUniform = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownTapeWrap = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownBoxArmor = Boolean.parseBoolean(bufferedReader.readLine());
+		
+		bufferedReader.readLine();
+		
+		boolean ownOldSlippers = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownRubberGloves = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownTissueBoxes = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownLeftSock = Boolean.parseBoolean(bufferedReader.readLine());
+
+		bufferedReader.readLine();
+		
+		boolean ownCarKeys = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownToothBrush = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownRustyScrewDriver = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownCardBoardSword = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownBoxingGloves = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownTapeGun = Boolean.parseBoolean(bufferedReader.readLine());
+
+		bufferedReader.readLine();
+		
+		boolean ownPieceOfCardboard = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownSturdyPieceOfCardboard = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownPlasticBinLid = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownTrashCanLid = Boolean.parseBoolean(bufferedReader.readLine());
+		
+		bufferedReader.readLine();
+		
+		int onionAmmount = Integer.parseInt(bufferedReader.readLine());
+		int marshMelloAmmount = Integer.parseInt(bufferedReader.readLine()); 
+		int magicShroomAmmount = Integer.parseInt(bufferedReader.readLine());
+		int packingPenutAmmount = Integer.parseInt(bufferedReader.readLine());
+		
+		int stamps = Integer.parseInt(bufferedReader.readLine());
+		
+		//makeObjects
+		
+		//items
+		
+		
+		
+		//food
 		
 		Food onion = new Food("Onion", 5, 2);
 		Food marshMello = new Food("MarshMello", 10, 5);
 		Food magicShroom = new Food("Magic Shroom", 20, 15);
 		Food packingPenut = new Food("Packing Penut", 50, 40);
-		
-		//items
-		
-		
 		
 		//junk
 		
@@ -107,7 +159,7 @@ public class Game
 		
 		//closeSaveLoader
 		
-		bufferedReader1.close();
+		bufferedReader.close();
 		
 		//action
 		
