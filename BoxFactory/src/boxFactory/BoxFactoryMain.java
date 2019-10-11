@@ -24,13 +24,13 @@ public class BoxFactoryMain
 			if(playing = true)
 			{
 				
-				gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
-				loose = Game.game(gameSelection); //loadGameData, game, loose.true exit.false
+				//gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
+				//loose = Game.game(gameSelection); //loadGameData, game, loose.true exit.false
 				
 				if (loose = true)
 				{
 					
-					Loose.loose(gameSelection); //deleteGameData
+					//Loose.loose(gameSelection); //deleteGameData
 					
 				}
 				
@@ -38,7 +38,7 @@ public class BoxFactoryMain
 			
 		}
         
-		Goodbye.goodbye();
+		//Goodbye.goodbye();
 		
 	}
 	

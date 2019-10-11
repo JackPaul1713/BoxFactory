@@ -8,6 +8,7 @@
 		ItemLikelyhood *numb
 		OpeningSpeed *numb
 		NumbOfBoxesMade *numb
+		NumbOfBoxes *numb
 	CharacterStats:
 		Heath *numb
 		MaxHealth *numb

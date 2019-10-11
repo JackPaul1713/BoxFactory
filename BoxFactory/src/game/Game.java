@@ -2,13 +2,18 @@ package game;
 
 import java.io.FileReader;
 import java.io.BufferedReader;
+import java.io.IOException;
+
+import boxFactory.GameSelect;
+
+import java.io.FileNotFoundException;
 import food.*;
 import junk.*;
 
 public class Game
 {
 
-	public static void game(String gameSelection)
+	public static void game(String gameSelection) throws IOException
 	{
 		
 		//saveLoader
@@ -21,7 +26,6 @@ public class Game
 		String savedGame2 = "SavedGame2.txt";
 		String savedGame3 = "SavedGame3.txt";
 		
-		String line = null;
 		FileReader fileReader;
 		
 		if(gameSelection.substring(0, 1).equals("l"))
@@ -63,14 +67,15 @@ public class Game
 		
 		bufferedReader.readLine();
 	
-		int MakeSpeed = 20;
-		int MobLikelyhood = 10;
-		int MoneyLikelyhood = 40;
-		int JunkLikelyhood = 10;
-		int ItemLikelyhood = 10;
-		int TotalLikelyhood = MobLikelyhood + MoneyLikelyhood + JunkLikelyhood + ItemLikelyhood;
-		int OpeningSpeed = 20;
-		int NumbOfBoxesMade = 1;
+		int makeSpeed = Integer.parseInt(bufferedReader.readLine());
+		int mobLikelyhood = Integer.parseInt(bufferedReader.readLine());
+		int moneyLikelyhood = Integer.parseInt(bufferedReader.readLine());
+		int junkLikelyhood = Integer.parseInt(bufferedReader.readLine());
+		int itemLikelyhood = Integer.parseInt(bufferedReader.readLine());
+		int totalLikelyhood = mobLikelyhood + moneyLikelyhood + junkLikelyhood + itemLikelyhood;
+		int openingSpeed = Integer.parseInt(bufferedReader.readLine());
+		int numbOfBoxesMade = Integer.parseInt(bufferedReader.readLine());
+		int numbOfBoxes = Integer.parseInt(bufferedReader.readLine());
 		
 		bufferedReader.readLine();
 		
@@ -136,20 +141,18 @@ public class Game
 		
 		int stamps = Integer.parseInt(bufferedReader.readLine());
 		
-		//makeObjects
-		
-		//items
+		//makeItems
 		
 		
 		
-		//food
+		//makeFood
 		
 		Food onion = new Food("Onion", 5, 2);
 		Food marshMello = new Food("MarshMello", 10, 5);
 		Food magicShroom = new Food("Magic Shroom", 20, 15);
 		Food packingPenut = new Food("Packing Penut", 50, 40);
 		
-		//junk
+		//makeJunk
 		
 		Junk detentionSlip = new Junk("Detention Slip");
 		Junk uglySweater = new Junk("Ugly Sweater");
@@ -161,9 +164,63 @@ public class Game
 		
 		bufferedReader.close();
 		
+		//otherVariables
+		
+		int mainMenuSelection = 0;
+		
 		//action
 		
-		MainMenu.mainMenu();
+		mainMenuSelection = MainMenu.mainMenu();
+		
+		if (mainMenuSelection == 1)
+		{
+			
+			DispStats.dispStats(makeSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, totalLikelyhood, openingSpeed, numbOfBoxesMade, numbOfBoxes)
+			
+		}
+		else if (mainMenuSelection == 2)
+		{
+			
+			MakeBox.makebox();
+			
+		}
+		else if (mainMenuSelection == 3)
+		{
+			
+			
+			OpenBox.openBox();
+			
+		}
+		else if (mainMenuSelection == 4)
+		{
+			
+			ItemMenu.itemMenu();
+			
+		}
+		else if (mainMenuSelection == 5)
+		{
+			
+			UpgradeMenu.upgradeMenu();
+			
+		}
+		else if (mainMenuSelection == 6)
+		{
+			
+			ShopMenu.shopMenu
+			
+		}
+		else if (mainMenuSelection == 7)
+		{
+			
+			Save.save();
+			
+		}
+		else if (mainMenuSelection == 8)
+		{
+			
+			GameSelect.gameSelect();
+			
+		}
 		
 	}
 	
