@@ -1,32 +1,32 @@
 package game;
 
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 import boxFactory.GameSelect;
-
-import java.io.FileNotFoundException;
 import food.*;
 import junk.*;
 
 public class Game
 {
 
-	public static void game(String gameSelection) throws IOException
+	public static boolean game(String gameSelection) throws IOException
 	{
 		
-		//saveLoader
+		//////////////////////////////// Load Save ////////////////////////////////
 		
-		int gameNumber = 0;
-		String newOrLoadGame = "";
+		//saveReader
 		
 		String defaultSave = "DefaultSave.txt";
 		String savedGame1 = "SavedGame1.txt";
 		String savedGame2 = "SavedGame2.txt";
 		String savedGame3 = "SavedGame3.txt";
 		
-		FileReader fileReader;
+		FileReader fileReader = null;
 		
 		if(gameSelection.substring(0, 1).equals("l"))
 		{
@@ -58,7 +58,7 @@ public class Game
 			
 		}
 		
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
 		//loadData
         
@@ -119,7 +119,7 @@ public class Game
 		bufferedReader.readLine();
 		
 		boolean ownCarKeys = Boolean.parseBoolean(bufferedReader.readLine());
-		boolean ownToothBrush = Boolean.parseBoolean(bufferedReader.readLine());
+		boolean ownBoxCutter = Boolean.parseBoolean(bufferedReader.readLine());
 		boolean ownRustyScrewDriver = Boolean.parseBoolean(bufferedReader.readLine());
 		boolean ownCardBoardSword = Boolean.parseBoolean(bufferedReader.readLine());
 		boolean ownBoxingGloves = Boolean.parseBoolean(bufferedReader.readLine());
@@ -139,7 +139,15 @@ public class Game
 		int magicShroomAmmount = Integer.parseInt(bufferedReader.readLine());
 		int packingPenutAmmount = Integer.parseInt(bufferedReader.readLine());
 		
+		bufferedReader.readLine();
+		
 		int stamps = Integer.parseInt(bufferedReader.readLine());
+		
+		//closeSaveLoader
+		
+		bufferedReader.close();
+		
+		//////////////////////////////// objects ////////////////////////////////
 		
 		//makeItems
 		
@@ -160,67 +168,141 @@ public class Game
 		Junk winningLoteryTicket = new Junk("Winning Lottery Ticket");
 			/*Array junkImage;*/
 		
-		//closeSaveLoader
-		
-		bufferedReader.close();
-		
-		//otherVariables
+		//////////////////////////////// basicVariables ////////////////////////////////
 		
 		int mainMenuSelection = 0;
+		int itemMenuSelection = 0;
+		int shopMenuSelcetion = 0;
+		
+		boolean game = true;
+		boolean mainMenu = true;
+		
+		Scanner strInput = new Scanner(System.in);
+		
+		//////////////////////////////// action ////////////////////////////////
+		
+		//initialAction
+		
+		if (gameSelection.substring(0, 1).equals("n"))
+		{
+
+			System.out.println("[][][][][][][][][][][] New Factory [][][][][][][][][][][]");
+			System.out.println("");
+			System.out.println("Enter a new factory name.");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.print("Input:");
+			factoryName = strInput.nextLine();
+			
+			System.out.println("[][][][][][][][][][][] New Character [][][][][][][][][][][]");
+			System.out.println("");
+			System.out.println("Enter a new character game.");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.print("Input:");
+			charName = strInput.nextLine();
+			
+		}
 		
 		//action
 		
-		mainMenuSelection = MainMenu.mainMenu();
+		while (mainMenu = true)
+		{
+			
+			mainMenuSelection = MainMenu.mainMenu();
+			
+			if (mainMenuSelection == 1)
+			{
+				
+				//DispStats.dispStats(makeSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, totalLikelyhood, openingSpeed, numbOfBoxesMade, numbOfBoxes)
+				
+			}
+			else if (mainMenuSelection == 2)
+			{
+				
+				//MakeBox.makebox();
+				
+			}
+			else if (mainMenuSelection == 3)
+			{
+				
+				
+				//OpenBox.openBox();
+				
+			}
+			else if (mainMenuSelection == 4)
+			{
+				
+				//ItemMenu.itemMenu();
+				
+			}
+			else if (mainMenuSelection == 5)
+			{
+				
+				//UpgradeMenu.upgradeMenu();
+				
+			}
+			else if (mainMenuSelection == 6)
+			{
+				
+				//ShopMenu.shopMenu
+				
+			}
+			else if (mainMenuSelection == 7)
+			{
+				
+				System.out.println("Error, Locked.");
+				
+			}
+			else if (mainMenuSelection == 8)
+			{
+				
+				SaveGame.saveGame();
+				
+			}
+			else if (mainMenuSelection == 9)
+			{
+				
+				mainMenu = false;
+				GameSelect.gameSelect();
+				
+			}
+			
+			if (health <= 0)
+			{
+				
+				game = false;
+				mainMenu = false;
+				
+			}
+			
+		}
 		
-		if (mainMenuSelection == 1)
-		{
-			
-			DispStats.dispStats(makeSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, totalLikelyhood, openingSpeed, numbOfBoxesMade, numbOfBoxes)
-			
-		}
-		else if (mainMenuSelection == 2)
-		{
-			
-			MakeBox.makebox();
-			
-		}
-		else if (mainMenuSelection == 3)
-		{
-			
-			
-			OpenBox.openBox();
-			
-		}
-		else if (mainMenuSelection == 4)
-		{
-			
-			ItemMenu.itemMenu();
-			
-		}
-		else if (mainMenuSelection == 5)
-		{
-			
-			UpgradeMenu.upgradeMenu();
-			
-		}
-		else if (mainMenuSelection == 6)
-		{
-			
-			ShopMenu.shopMenu
-			
-		}
-		else if (mainMenuSelection == 7)
-		{
-			
-			Save.save();
-			
-		}
-		else if (mainMenuSelection == 8)
-		{
-			
-			GameSelect.gameSelect();
-			
-		}
+		//return
+		
+		return(game);
 		
 	}
 	

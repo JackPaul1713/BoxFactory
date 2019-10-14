@@ -16,7 +16,11 @@ public class MainMenu
 		
 		//action
 		
-		System.out.println("Box Factory Main Menu");
+		System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+		System.out.println("[][][][][][][][][] Box Factory Main Menu  [][][][][][][][][]");
+		System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+		System.out.println("");
+		System.out.println("*Basic Stats*");
 		System.out.println("");
 		System.out.println("(1) Stats");
 		System.out.println("(2) Make Box");
@@ -24,11 +28,11 @@ public class MainMenu
 		System.out.println("(4) My Items");
 		System.out.println("(5) Upgrades");
 		System.out.println("(6) Shop");
-		System.out.println("(7) Save");
-		System.out.println("(8) Exit");
+		System.out.println("(7) Boss Fight [Locked]");
+		System.out.println("(8) Save");
+		System.out.println("(9) Exit");
 		System.out.println("");
 		System.out.print("Input: ");
-		
 		mainMenuSelection = intInput.nextInt();
 		
 		//return

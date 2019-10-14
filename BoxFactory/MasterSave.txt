@@ -1,0 +1,156 @@
+*FactoryName
+*CharacterName
+	FactoryStats:
+		MakeSpeed *numb
+		MobLikelyhood *numb
+		MoneyLikelyhood *numb
+		JunkLikelyhood *numb
+		ItemLikelyhood *numb
+		OpeningSpeed *numb
+		NumbOfBoxesMade *numb
+		NumbOfBoxes *numb
+	CharacterStats:
+		Heath *numb
+		MaxHealth *numb
+		Strength *numb
+		Energy *numb
+		Money *numb
+	Upgrades:
+		FasterConvarabelt *tOrF
+		StudierCardboard *tOrF
+		CoolerBoxes *tOrF
+		CleanerBoxs *tOrF
+		MoreBoxyBoxes *tOrF
+		OpeningMaster *tOrF
+		MoreBoxes1 *tOrF
+		MoreBoxes2 *tOrF
+	Items:
+	Hats
+		PaperBag *tOrF
+		FedExHat *tOrF
+		BoxHelmet *tOrF
+		BoxCrown *tOrF
+	Clothing
+		UPSUniform *tOrF
+		TapeWrap *tOrF
+		BoxArmor *tOrF
+	Shoes
+		OldSlippers *tOrF
+		RubberGloves *tOrF
+		TissueBoxes *tOrF
+		LeftSock *tOrF
+	Weapons
+		CarKeys *tOrF
+		BoxCutter *tOrF
+		RustyScrewDriver *tOrF
+		CardBoardSword *tOrF
+		BoxingGloves *tOrF
+		TapeGun *tOrF
+	Shields
+		PieceOfCardboard *tOrF
+		SturdyPieceOfCardboard *tOrF
+		PlasticBinLid *tOrF
+		TrashCanLid *tOrF
+	Food
+		Onion - *numb
+		MarshMello - *numb
+		MagicMushroom - *numb
+		PackingPenut *numb
+	Stamps: numb
+	
+	
+	
+	String factoryName, String charName, int makeSpeed, int mobLikelyhood, int moneyLikelyhood, int junkLikelyhood, int itemLikelyhood, int openingSpeed, int numbOfBoxesMade,
+int numbOfBoxes,
+int health,
+int maxHealth,
+int strength,
+int defence,
+int money,
+boolean FasterConvarabelt,
+boolean StudierCardboard,
+boolean CoolerBoxes,
+boolean CleanerBoxs,
+boolean MoreBoxyBoxes,
+boolean OpeningMaster,
+boolean MoreBoxes1,
+boolean MoreBoxes2,
+boolean ownPaperBag,
+boolean ownFedExHat,
+boolean ownBoxHelmet,
+boolean ownBoxCrown,
+boolean ownUPSUniform,
+boolean ownTapeWrap,
+boolean ownBoxArmor,
+boolean ownOldSlippers,
+boolean ownRubberGloves,
+boolean ownTissueBoxes,
+boolean ownLeftSock,
+boolean ownCarKeys,
+boolean ownBoxCutter,
+boolean ownRustyScrewDriver,
+boolean ownCardBoardSword,
+boolean ownBoxingGloves,
+boolean ownTapeGun,
+boolean ownPieceOfCardboard,
+boolean ownSturdyPieceOfCardboard,
+boolean ownPlasticBinLid,
+boolean ownTrashCanLid,
+int onionAmmount,
+int marshMelloAmmount,
+int magicShroomAmmount,
+int packingPenutAmmount,
+
+String factoryName, String charName, int makeSpeed, int mobLikelyhood, int moneyLikelyhood, int junkLikelyhood, int itemLikelyhood,
+int openingSpeed,
+int numbOfBoxesMade,
+int numbOfBoxes,
+
+int health,
+int maxHealth,
+int strength,
+int defence,
+int money,
+
+boolean FasterConvarabelt,
+boolean StudierCardboard,
+boolean CoolerBoxes,
+boolean CleanerBoxs,
+boolean MoreBoxyBoxes,
+boolean OpeningMaster,
+boolean MoreBoxes1,
+boolean MoreBoxes2,
+
+boolean ownPaperBag,
+boolean ownFedExHat,
+boolean ownBoxHelmet,
+boolean ownBoxCrown,
+
+boolean ownUPSUniform,
+boolean ownTapeWrap,
+boolean ownBoxArmor,
+
+boolean ownOldSlippers,
+boolean ownRubberGloves,
+boolean ownTissueBoxes,
+boolean ownLeftSock,
+
+boolean ownCarKeys,
+boolean ownBoxCutter,
+boolean ownRustyScrewDriver,
+boolean ownCardBoardSword,
+boolean ownBoxingGloves,
+boolean ownTapeGun,
+
+boolean ownPieceOfCardboard,
+boolean ownSturdyPieceOfCardboard,
+boolean ownPlasticBinLid,
+boolean ownTrashCanLid,
+
+int onionAmmount,
+int marshMelloAmmount,
+int magicShroomAmmount,
+int packingPenutAmmount,
+
+	
+	

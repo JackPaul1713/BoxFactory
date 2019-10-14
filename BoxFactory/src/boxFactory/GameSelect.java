@@ -3,7 +3,6 @@ package boxFactory;
 import java.io.FileReader;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class GameSelect
@@ -36,13 +35,24 @@ public class GameSelect
 		
 		//action
 		
-		System.out.println("Choise new or load, then select the save. Ex:n1");
+		System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+		System.out.println("[][][][][][][][][][][] Game Selection [][][][][][][][][][][]");
+		System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+		System.out.println("");
+		System.out.println("[][][][][][][][][][][] Saved Games [][][][][][][][][][][]");
 		System.out.println("");
 		System.out.println("(1) " + bufferedReader1.readLine());
 		System.out.println("(2) " + bufferedReader2.readLine());
 		System.out.println("(3) " + bufferedReader3.readLine());
 		System.out.println("");
+		System.out.println("Enter n for a new game and l to load a previous save.");
+		System.out.println("Then input the game number, and press enter.");
+		System.out.println("ExampleInput: \"n1\" or \"l2\"");
+		System.out.println("");
+		System.out.println("Note: selecting 'n' on a game will overwright its save.");
+		System.out.println("");
 		System.out.print("Input:");
+		gameSelection = strInput.nextLine();
 		
 		bufferedReader0.close();
 		bufferedReader1.close();
@@ -51,7 +61,7 @@ public class GameSelect
 		
 		//return
 		
-		return("");
+		return(gameSelection);
 		
 	}
 	
