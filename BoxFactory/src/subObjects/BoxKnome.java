@@ -1,4 +1,4 @@
-package mobs;
+package subObjects;
 
 public class BoxKnome
 {

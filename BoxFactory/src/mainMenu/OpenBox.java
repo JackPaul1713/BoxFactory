@@ -1,4 +1,4 @@
-package game;
+package mainMenu;
 
 public class OpenBox
 {

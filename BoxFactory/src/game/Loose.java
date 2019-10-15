@@ -1,6 +1,6 @@
 package game;
 
-public class MakeBox
+public class Loose
 {
 
 }

@@ -1,11 +1,11 @@
-package junk;
+package objects;
 
 public class Junk
 {
 
-	//variables
+		//variables
 	
-		private String name;
+		private final String name;
 		
 		//bluePrint
 		
@@ -16,13 +16,20 @@ public class Junk
 			
 		}
 
+		//methods
+		
+		public void dispImage()
+		{
+			
+			
+			
+		}
+		
 		//getters
 		
 		public String getName()
 		{
-			
 			return name;
-			
 		}
 	
 }

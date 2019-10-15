@@ -2,7 +2,7 @@ package boxFactory;
 
 import java.io.IOException;
 
-import game.Game;
+import game.BoxFactoryGame;
 
 public class BoxFactoryMain
 {
@@ -13,7 +13,6 @@ public class BoxFactoryMain
 		//variables
 		
 		boolean playing = true;
-		boolean game = true;
 		String gameSelection = "";
 		
 		//action
@@ -29,14 +28,7 @@ public class BoxFactoryMain
 			{
 				
 				gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
-				game = Game.game(gameSelection); //loadGameData, game, loose.true exit.false
-				
-				if (game = false)
-				{
-					
-					//Loose.loose(gameSelection); //deleteGameData
-					
-				}
+				BoxFactoryGame.boxFactoryGame(gameSelection); //loadGameData, game, loose.true exit.false
 				
 			}
 			
