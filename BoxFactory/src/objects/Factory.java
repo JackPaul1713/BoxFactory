@@ -17,7 +17,7 @@ public class Factory
 	private int moneyLikelyhood;
 	private int junkLikelyhood;
 	private int itemLikelyhood;
-	private volatile int totalLikelyhood;
+	//private volatile int totalLikelyhood;
 	private int numbOfBoxesMade;
 	 
 	public ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
@@ -75,11 +75,6 @@ public class Factory
 		return itemLikelyhood;
 	}
 
-	public int getTotalLikelyhood()
-	{
-		return totalLikelyhood;
-	}
-
 	public int getOpeningSpeed()
 	{
 		return openingSpeed;
@@ -130,11 +125,6 @@ public class Factory
 	public void setItemLikelyhood(int itemLikelyhood)
 	{
 		this.itemLikelyhood = itemLikelyhood;
-	}
-	
-	public void setTotalLikelyhood(int totalLikelyhood)
-	{
-		this.totalLikelyhood = this.totalLikelyhood;
 	}
 	
 	public void setOpeningSpeed(int openingSpeed)

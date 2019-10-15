@@ -3,20 +3,25 @@ package mainMenu;
 import java.io.IOException;
 import java.util.Scanner;
 
+import objects.Game;
 import objects.Factory;
 import objects.Character;
 
 public class DispStats
 {
 
-	public static void dispStatsMenu(Factory factory, Character character) throws IOException
+	public static void dispStatsMenu(Game game) throws IOException
 	{
 		
 		//variables
 		
-		Scanner intInput = new Scanner(System.in);
 		int choice;
 		boolean mainMenu = true;
+		
+		Factory factory = game.getFactory();
+		Character character = game.getCharacter();
+		
+		Scanner intInput = new Scanner(System.in);
 		
 		//menu
 		
@@ -59,7 +64,7 @@ public class DispStats
 			{
 
 				mainMenu = false;
-				MainMenu.mainMenu(factory, character);
+				MainMenu.mainMenu(game);
 
 			}
 
@@ -88,8 +93,8 @@ public class DispStats
 		System.out.println("Money likelyhood: " + factory.getMoneyLikelyhood());
 		System.out.println("Junk likelyhood: " + factory.getJunkLikelyhood());
 		System.out.println("Item likelyhood: " + factory.getItemLikelyhood());
-		System.out.println("Total likelyhood: " + factory.getTotalLikelyhood());
 		System.out.println("Number of boxes made: " + factory.getNumbOfBoxesMade());
+		System.out.println("");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");

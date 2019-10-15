@@ -21,8 +21,6 @@ public class BoxFactoryGame
 		//variables
 		
 		Game game;
-		Factory factory;
-		Character character;
 		
 		ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
 		ArrayList<Item> items = new ArrayList<Item>();
@@ -37,12 +35,10 @@ public class BoxFactoryGame
 		junk = InitializeObjects.initializeJunk();
 		
 		game = LoadGame.loadGame(gameSelection, upgrades, items, foods);
-		factory = game.getFactory();
-		character = game.getCharacter();
 		
 		//game
 		
-		MainMenu.mainMenu(factory, character);
+		MainMenu.mainMenu(game);
 		
 	}
 	

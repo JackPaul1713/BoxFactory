@@ -114,7 +114,6 @@ public class LoadGame
 		moneyLikelyhood = Integer.parseInt(bufferedReader.readLine());
 		junkLikelyhood = Integer.parseInt(bufferedReader.readLine());
 		itemLikelyhood = Integer.parseInt(bufferedReader.readLine());
-		totalLikelyhood = mobLikelyhood + moneyLikelyhood + junkLikelyhood + itemLikelyhood; bufferedReader.readLine();
 		numbOfBoxesMade = Integer.parseInt(bufferedReader.readLine());
 
 		bufferedReader.readLine();

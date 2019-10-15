@@ -5,13 +5,15 @@ import java.util.Scanner;
 
 import boxFactory.GameSelect;
 import game.BoxFactoryGame;
+
+import objects.Game;
 import objects.Factory;
 import objects.Character;
 
 public class MainMenu
 {
 
-	public static void mainMenu(Factory factory, Character character) throws IOException
+	public static void mainMenu(Game game) throws IOException
 	{
 		
 		//variables
@@ -19,6 +21,9 @@ public class MainMenu
 		int mainMenuSelection = 0;
 		boolean mainMenu = true;
 		String gameSelection = "";
+		
+		Factory factory = game.getFactory();
+		Character character = game.getCharacter();
 		
 		Scanner intInput = new Scanner(System.in);
 		
@@ -51,7 +56,7 @@ public class MainMenu
 			if (mainMenuSelection == 1)
 			{
 				
-				DispStats.dispStatsMenu(factory, character);
+				DispStats.dispStatsMenu(game);
 				
 			}
 			else if (mainMenuSelection == 2)
