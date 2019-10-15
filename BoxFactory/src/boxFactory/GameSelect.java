@@ -51,7 +51,7 @@ public class GameSelect
 		System.out.println("");
 		System.out.println("Note: selecting 'n' on a game will overwright its save.");
 		System.out.println("");
-		System.out.print("Input:");
+		System.out.print("Input: ");
 		gameSelection = strInput.nextLine();
 		
 		bufferedReader0.close();

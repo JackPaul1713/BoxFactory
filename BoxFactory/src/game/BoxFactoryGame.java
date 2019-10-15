@@ -42,7 +42,7 @@ public class BoxFactoryGame
 		
 		//game
 		
-		MainMenu.mainMenu();
+		MainMenu.mainMenu(factory, character);
 		
 	}
 	

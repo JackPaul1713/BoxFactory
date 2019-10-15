@@ -31,7 +31,7 @@ public class GetNames
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-		System.out.print("Input:");
+		System.out.print("Input: ");
 		factoryName = strInput.nextLine();
 		
 		//return
@@ -66,7 +66,7 @@ public class GetNames
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");
-		System.out.print("Input:");
+		System.out.print("Input: ");
 		characterName = strInput.nextLine();
 		
 		//return

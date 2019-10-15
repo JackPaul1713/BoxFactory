@@ -5,11 +5,13 @@ import java.util.Scanner;
 
 import boxFactory.GameSelect;
 import game.BoxFactoryGame;
+import objects.Factory;
+import objects.Character;
 
 public class MainMenu
 {
 
-	public static void mainMenu() throws IOException
+	public static void mainMenu(Factory factory, Character character) throws IOException
 	{
 		
 		//variables
@@ -29,7 +31,7 @@ public class MainMenu
 			System.out.println("[][][][][][][][][] Box Factory Main Menu  [][][][][][][][][]");
 			System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
 			System.out.println("");
-			System.out.println("*Basic Stats*");
+			System.out.println("Boxes: " + factory.getNumbOfBoxes() + " Health: " + character.getHealth() + " Money: " + character.getMoney());
 			System.out.println("");
 			System.out.println("(1) Stats");
 			System.out.println("(2) Make Box");
@@ -49,7 +51,7 @@ public class MainMenu
 			if (mainMenuSelection == 1)
 			{
 				
-				//DispStats.dispStats(makeSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, totalLikelyhood, openingSpeed, numbOfBoxesMade, numbOfBoxes)
+				DispStats.dispStatsMenu(factory, character);
 				
 			}
 			else if (mainMenuSelection == 2)
