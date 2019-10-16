@@ -10,7 +10,7 @@ import objects.Character;
 public class DispStats
 {
 
-	public static void dispStatsMenu(Game game) throws IOException
+	public static void dispStatsMenu(Game game) throws IOException, InterruptedException
 	{
 		
 		//variables

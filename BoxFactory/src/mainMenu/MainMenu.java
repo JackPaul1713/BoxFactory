@@ -13,14 +13,14 @@ import objects.Character;
 public class MainMenu
 {
 
-	public static void mainMenu(Game game) throws IOException
+	public static void mainMenu(Game game) throws IOException, InterruptedException
 	{
 		
 		//variables
 		
 		int mainMenuSelection = 0;
 		boolean mainMenu = true;
-		String gameSelection = "";
+		String gameSelection;
 		
 		Factory factory = game.getFactory();
 		Character character = game.getCharacter();
@@ -36,7 +36,7 @@ public class MainMenu
 			System.out.println("[][][][][][][][][] Box Factory Main Menu  [][][][][][][][][]");
 			System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
 			System.out.println("");
-			System.out.println("Boxes: " + factory.getNumbOfBoxes() + " Health: " + character.getHealth() + " Money: " + character.getMoney());
+			System.out.println("Boxes: " + factory.getNumbOfBoxes() + " Health: " + character.getHealth() + "/" + character.getMaxHealth() + " Money: " + character.getMoney());
 			System.out.println("");
 			System.out.println("(1) Stats");
 			System.out.println("(2) Make Box");
@@ -62,20 +62,19 @@ public class MainMenu
 			else if (mainMenuSelection == 2)
 			{
 				
-				//MakeBox.makebox();
-				
+				game = MakeBox.makeBox(game);
+
 			}
 			else if (mainMenuSelection == 3)
 			{
 				
-				
-				//OpenBox.openBox();
+				game = OpenBox.openBox(game);
 				
 			}
 			else if (mainMenuSelection == 4)
 			{
 				
-				//ItemMenu.itemMenu();
+				game = StuffMenu.stuffMenu(game);
 				
 			}
 			else if (mainMenuSelection == 5)
@@ -93,7 +92,7 @@ public class MainMenu
 			else if (mainMenuSelection == 7)
 			{
 				
-				SaveGame.saveGame();
+				SaveGame.saveGame(game);
 				
 			}
 			else if (mainMenuSelection == 8)

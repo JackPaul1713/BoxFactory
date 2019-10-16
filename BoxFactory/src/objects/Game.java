@@ -7,12 +7,14 @@ public class Game
 	
 	private Factory factory;
 	private Character character;
+	private String gameSelection;
 	
-	public Game(Factory f, Character c)
+	public Game(Factory f, Character c, String gs)
 	{
 		
 		setFactory(f);
 		setCharacter(c);
+		setGameSelection(gs);
 		
 	}
 
@@ -28,6 +30,11 @@ public class Game
 		return character;
 	}
 	
+	public String getGameSelection()
+	{
+		return gameSelection;
+	}
+	
 	//setters
 
 	public void setFactory(Factory factory)
@@ -38,6 +45,11 @@ public class Game
 	public void setCharacter(Character character)
 	{
 		this.character = character;
+	}
+	
+	public void setGameSelection(String gameSelection)
+	{
+		this.gameSelection = gameSelection;
 	}
 
 }

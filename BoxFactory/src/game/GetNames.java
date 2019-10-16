@@ -15,7 +15,7 @@ public class GetNames
 		
 		//action
 		
-		System.out.println("[][][][][][][][][][][] New Factory [][][][][][][][][][][]");
+		System.out.println("[][][][][][][][][][][] New Factory  [][][][][][][][][][][][]");
 		System.out.println("");
 		System.out.println("Enter a new factory name.");
 		System.out.println("");
@@ -50,9 +50,9 @@ public class GetNames
 		
 		//action
 		
-		System.out.println("[][][][][][][][][][][] New Character [][][][][][][][][][][]");
+		System.out.println("[][][][][][][][][][][] New Character  [][][][][][][][][][][]");
 		System.out.println("");
-		System.out.println("Enter a new character game.");
+		System.out.println("Enter a new character name.");
 		System.out.println("");
 		System.out.println("");
 		System.out.println("");

@@ -59,7 +59,7 @@ public class SetScreenSize
 			
 		}
 		
-		System.out.println("\nThis program requires a spcific consol window size.");
+		System.out.println("\nThis program requires a specific consol window size.");
 		System.out.println("Please ajust the consol window size so that the displayed corners above fill the screen.");
 		System.out.print("\nAfterwards press enter to continue.");
 		enterToContinue = blankInput.nextLine();

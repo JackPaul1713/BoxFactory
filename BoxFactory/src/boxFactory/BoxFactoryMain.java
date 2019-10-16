@@ -7,7 +7,7 @@ import game.BoxFactoryGame;
 public class BoxFactoryMain
 {
 
-	public static void main(String[] args) throws IOException
+	public static void main(String[] args) throws IOException, InterruptedException
 	{
 		
 		//variables

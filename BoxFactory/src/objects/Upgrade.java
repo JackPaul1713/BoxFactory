@@ -7,19 +7,31 @@ public class Upgrade
 	
 	private final String name;
 	private final int cost;
-	private final String statBoostArea;
-	private final int statBoost;
+	
+	private final int makeSpeedBoost;
+	private final int openingSpeedBoost;
+	private final int mobLikelyhoodMod;
+	private final int moneyLikelyhoodMod;
+	private final int junkLikelyhoodMod;
+	private final int itemLikelyhoodMod;
+	private final int numbOfBoxesMadeBoost;
+	
 	private boolean owned;
 	
 	//blueprint
 	
-	public Upgrade(String n, int c, String statBA, int statB, boolean o)
+	public Upgrade(String n, int c, int makeSB, int openingSB, int mobLM, int moneyLM, int junkLM, int itemLM, int numbBMB, boolean o)
 	{
 		
 		name = n;
 		cost = c;
-		statBoostArea = statBA;
-		statBoost = statB;
+		makeSpeedBoost = makeSB;
+		openingSpeedBoost = openingSB;
+		mobLikelyhoodMod = mobLM;
+		moneyLikelyhoodMod = moneyLM;
+		junkLikelyhoodMod = junkLM;
+		itemLikelyhoodMod = itemLM;
+		numbOfBoxesMadeBoost = numbBMB;
 		owned = o;
 		
 	}
@@ -31,21 +43,46 @@ public class Upgrade
 		return name;
 	}
 
-	public String getStatBoostArea()
-	{
-		return statBoostArea;
-	}
-
 	public int getCost()
 	{
 		return cost;
 	}
 
-	public int getStatBoost()
+	public int getMakeSpeedBoost()
 	{
-		return statBoost;
+		return makeSpeedBoost;
 	}
 
+	public int getOpeningSpeedBoost()
+	{
+		return openingSpeedBoost;
+	}
+
+	public int getMobLikelyhoodMod()
+	{
+		return mobLikelyhoodMod;
+	}
+
+	public int getMoneyLikelyhoodMod()
+	{
+		return moneyLikelyhoodMod;
+	}
+
+	public int getJunkLikelyhoodMod()
+	{
+		return junkLikelyhoodMod;
+	}
+
+	public int getItemLikelyhoodMod()
+	{
+		return itemLikelyhoodMod;
+	}
+
+	public int getNumbOfBoxesMadeBoost()
+	{
+		return numbOfBoxesMadeBoost;
+	}
+	
 	public boolean isOwned()
 	{
 		return owned;
@@ -56,35 +93,25 @@ public class Upgrade
 	public void setOwned(Factory factory, boolean owned)
 	{
 		
-		this.owned = owned;
+		if (this.owned = false)
+		{
 		
-		/*if(equiped == true)
-		{
-			
-			factory.setMaxHealth(factory.getMaxHealth() + this.getMaxHealthBoost());
-			factory.setStrength(factory.getStrength() + this.getStrengthBoost());
-			factory.setDefence(factory.getDefence() + this.getDefenceBoost());
-			factory.setToughness(factory.getToughness() + this.getToughnessBoost());
-			factory.setSpeed(factory.getSpeed() + this.getSpeedBoost());
-			
-		}
-		else if (equiped == false)
-		{
-			
-			factory.setMaxHealth(factory.getMaxHealth() - this.getMaxHealthBoost());
-			factory.setStrength(factory.getStrength() - this.getStrengthBoost());
-			factory.setDefence(factory.getDefence() - this.getDefenceBoost());
-			factory.setToughness(factory.getToughness() - this.getToughnessBoost());
-			factory.setSpeed(factory.getSpeed() - this.getSpeedBoost());
-
-			if (factory.getHealth() > factory.getMaxHealth())
+			if(owned == true)
 			{
-				
-				factory.setHealth(factory.getMaxHealth());
-				
-			}
 			
-		}*/
+				this.owned = owned;
+				
+				factory.setMakeSpeed(factory.getMakeSpeed() + this.getMakeSpeedBoost());
+				factory.setOpeningSpeed(factory.getOpeningSpeed() + this.getOpeningSpeedBoost());
+				factory.setMobLikelyhood(factory.getMobLikelyhood() + this.getMobLikelyhoodMod());
+				factory.setMoneyLikelyhood(factory.getMoneyLikelyhood() + this.getMoneyLikelyhoodMod());
+				factory.setJunkLikelyhood(factory.getJunkLikelyhood() + this.getJunkLikelyhoodMod());
+				factory.setItemLikelyhood(factory.getItemLikelyhood() + this.getItemLikelyhoodMod());
+				factory.setNumbOfBoxesMade(factory.getNumbOfBoxesMade() + this.getNumbOfBoxesMadeBoost());
+			
+			}	
+			
+		}	
 		
 	}
 	

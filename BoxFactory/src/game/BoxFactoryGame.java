@@ -15,7 +15,7 @@ import objects.Junk;
 public class BoxFactoryGame
 {
 
-	public static void boxFactoryGame(String gameSelection) throws IOException
+	public static void boxFactoryGame(String gameSelection) throws IOException, InterruptedException
 	{
 		
 		//variables
@@ -34,7 +34,7 @@ public class BoxFactoryGame
 		foods = InitializeObjects.initializeFood();
 		junk = InitializeObjects.initializeJunk();
 		
-		game = LoadGame.loadGame(gameSelection, upgrades, items, foods);
+		game = LoadGame.loadGame(gameSelection, upgrades, items, foods, junk);
 		
 		//game
 		

@@ -12,12 +12,13 @@ import objects.Character;
 
 import objects.Upgrade;
 import objects.Item;
+import objects.Junk;
 import objects.Food;
 
 public class LoadGame
 {
 	
-	public static Game loadGame(String gameSelection, ArrayList<Upgrade> upgrades, ArrayList<Item> items, ArrayList<Food> foods) throws IOException
+	public static Game loadGame(String gameSelection, ArrayList<Upgrade> upgrades, ArrayList<Item> items, ArrayList<Food> foods, ArrayList<Junk> junk) throws IOException
 	{
 		
 		//variables
@@ -29,23 +30,22 @@ public class LoadGame
 		String factoryName = "";
 		String characterName = "";
 		
-		int numbOfBoxes = 0;
-		int makeSpeed = 20;
-		int openSpeed = 20;
-		int mobLikelyhood = 10;
-		int moneyLikelyhood = 100;
-		int junkLikelyhood = 10;
-		int itemLikelyhood = 10;
-		int totalLikelyhood = 130;
-		int numbOfBoxesMade = 1;
+		int numbOfBoxes;
+		int makeSpeed;
+		int openSpeed;
+		int mobLikelyhood;
+		int moneyLikelyhood;
+		int junkLikelyhood;
+		int itemLikelyhood;
+		int numbOfBoxesMade;
 		
-		int money = 0;
-		int health = 100;
-		int maxHealth = 100;
-		int strength = 10;
-		int defence = 10;
-		int toughness = 10;
-		int speed = 10;
+		int money;
+		int health;
+		int maxHealth;
+		int strength;
+		int defence;
+		int toughness;
+		int speed;
 		
 		//fileReader
 		
@@ -88,7 +88,7 @@ public class LoadGame
 		
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
-		//getSubObjectVars
+		//setNames
 		
 		if (gameSelection.substring(0,1).equals("n"))
 		{
@@ -107,6 +107,8 @@ public class LoadGame
 
 		bufferedReader.readLine();
 
+		//setStats
+		
 		numbOfBoxes = Integer.parseInt(bufferedReader.readLine());
 		makeSpeed = Integer.parseInt(bufferedReader.readLine());
 		openSpeed = Integer.parseInt(bufferedReader.readLine());
@@ -128,7 +130,7 @@ public class LoadGame
 
 		bufferedReader.readLine();
 		
-		//setArrayObjects
+		//setArrayLists
 
 		for (int us = 0; us < upgrades.size(); us++)
 		{
@@ -167,15 +169,15 @@ public class LoadGame
 			// foods.set(fs, foods.get(fs)); //Unnessisary?
 
 		}
-
-		//fillSubObjects
 		
-		factory = new Factory(factoryName, numbOfBoxes, makeSpeed, openSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, totalLikelyhood, numbOfBoxesMade, upgrades);
-		character = new Character(characterName, money, health, maxHealth, strength, defence, toughness, speed, items, foods);
+		//fillObjects
+		
+		factory = new Factory(factoryName, numbOfBoxes, makeSpeed, openSpeed, mobLikelyhood, moneyLikelyhood, junkLikelyhood, itemLikelyhood, numbOfBoxesMade, upgrades);
+		character = new Character(characterName, money, health, maxHealth, strength, defence, toughness, speed, items, foods, junk);
 		
 		//fillObject
 		
-		game = new Game(factory, character);
+		game = new Game(factory, character, gameSelection);
 		
 		//closeFileReader
 		

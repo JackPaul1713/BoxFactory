@@ -17,14 +17,13 @@ public class Factory
 	private int moneyLikelyhood;
 	private int junkLikelyhood;
 	private int itemLikelyhood;
-	//private volatile int totalLikelyhood;
 	private int numbOfBoxesMade;
 	 
 	public ArrayList<Upgrade> upgrades = new ArrayList<Upgrade>();
 	
 	//blueprint
 	
-	public Factory(String n, int numbB, int makeS, int openingS, int mobL, int moneyL, int junkL, int itemL, int totL, int numbBM, ArrayList<Upgrade> upG)
+	public Factory(String n, int numbB, int makeS, int openingS, int mobL, int moneyL, int junkL, int itemL, int numbBM, ArrayList<Upgrade> upG)
 	{
 		
 		name = n;
@@ -36,7 +35,6 @@ public class Factory
 		setMoneyLikelyhood(moneyL);
 		setJunkLikelyhood(junkL);
 		setItemLikelyhood(itemL);
-		setTotalLikelyhood(mobL + moneyL + junkL + itemL);
 		setNumbOfBoxesMade(numbBM);
 		 
 		upgrades = upG;
@@ -44,6 +42,11 @@ public class Factory
 	}
 	
 	//getters
+	
+	public String getName()
+	{
+		return name;
+	}
 	
 	public int getNumbOfBoxes()
 	{
@@ -87,12 +90,7 @@ public class Factory
 	
 	public ArrayList<Upgrade> getUpgrades()
 	{
-		return(upgrades);
-	}
-	
-	public String getName()
-	{
-		return name;
+		return upgrades;
 	}
 	
 	//setters

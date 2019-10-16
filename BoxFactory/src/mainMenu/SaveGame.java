@@ -1,15 +1,34 @@
 package mainMenu;
 
+import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
+
+import objects.Game;
+import objects.Item;
+import objects.Upgrade;
+import objects.Factory;
+import objects.Food;
+import objects.Character;
 
 public class SaveGame
 {
 
-	public static void saveGame()
+	public static void saveGame(Game game) throws IOException
 	{
 		
-		//saver
+		//variables
+		
+		Factory factory = game.getFactory();
+		Character character = game.getCharacter();
+		String gameSelection = game.getGameSelection();
+		
+		ArrayList<Upgrade> upgrades = factory.getUpgrades(); 
+		ArrayList<Item> items = character.getItems(); 
+		ArrayList<Food> foods = character.getFoods();
+		
+		//fileWriter
 		
 		String defaultSave = "DefaultSave.txt";
 		String savedGame1 = "SavedGame1.txt";
@@ -39,93 +58,75 @@ public class SaveGame
 		
 		BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
 		
-		//saveData
+		//writeNames
+		
+		bufferedWriter.write(factory.getName()); bufferedWriter.newLine();
+		bufferedWriter.write(character.getName()); bufferedWriter.newLine();
+		
+		bufferedWriter.newLine();
+		
+		//writeStats
+		
+		bufferedWriter.write(Integer.toString(factory.getNumbOfBoxes())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getMakeSpeed())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getOpeningSpeed())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getMobLikelyhood())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getMoneyLikelyhood())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getJunkLikelyhood())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getItemLikelyhood())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(factory.getNumbOfBoxesMade())); bufferedWriter.newLine();
+
+		bufferedWriter.newLine();
+		
+		bufferedWriter.write(Integer.toString(character.getMoney())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getHealth())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getMaxHealth())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getStrength())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getDefence())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getToughness())); bufferedWriter.newLine();
+		bufferedWriter.write(Integer.toString(character.getSpeed())); bufferedWriter.newLine();
+
+		bufferedWriter.newLine();
+		
+		//writeArrays
         
-        bufferedWriter.write(factoryName); bufferedWriter.newLine();
-        bufferedWriter.write(charName); bufferedWriter.newLine();
-		
-        bufferedWriter.newLine();
-	
-        bufferedWriter.write(makeSpeed); bufferedWriter.newLine();
-        bufferedWriter.write(mobLikelyhood); bufferedWriter.newLine();
-        bufferedWriter.write(moneyLikelyhood); bufferedWriter.newLine();
-        bufferedWriter.write(junkLikelyhood); bufferedWriter.newLine();
-        bufferedWriter.write(itemLikelyhood); bufferedWriter.newLine();
-        bufferedWriter.write(openingSpeed); bufferedWriter.newLine();
-        bufferedWriter.write(numbOfBoxesMade); bufferedWriter.newLine();
-        bufferedWriter.write(numbOfBoxes); bufferedWriter.newLine();
-		
-		bufferedWriter.newLine();
-		
-		bufferedWriter.write(health); bufferedWriter.newLine();
-		bufferedWriter.write(maxHealth); bufferedWriter.newLine();
-		bufferedWriter.write(strength); bufferedWriter.newLine();
-		bufferedWriter.write(defence); bufferedWriter.newLine();
-		bufferedWriter.write(money); bufferedWriter.newLine();
-		
-		bufferedWriter.newLine();
+		for (int us = 0; us < upgrades.size(); us++)
+		{
 
-		bufferedWriter.write(Boolean.toString(FasterConvarabelt)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(StudierCardboard)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(CoolerBoxes)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(CleanerBoxs)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(MoreBoxyBoxes)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(OpeningMaster)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(MoreBoxes1)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(MoreBoxes2)); bufferedWriter.newLine();
-		
-		bufferedWriter.newLine();
-		
-		bufferedWriter.write(Boolean.toString(ownPaperBag)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownFedExHat)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownBoxHelmet)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownBoxCrown)); bufferedWriter.newLine();
-	
-		bufferedWriter.newLine();
-		
-		bufferedWriter.write(Boolean.toString(ownUPSUniform)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownTapeWrap)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownBoxArmor)); bufferedWriter.newLine();
-		
-		bufferedWriter.newLine();
-		
-		bufferedWriter.write(Boolean.toString(ownOldSlippers)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownRubberGloves)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownTissueBoxes)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownLeftSock)); bufferedWriter.newLine();
+			bufferedWriter.write(Boolean.toString(upgrades.get(us).isOwned())); bufferedWriter.newLine();
+
+		}
 
 		bufferedWriter.newLine();
-		
-		bufferedWriter.write(Boolean.toString(ownCarKeys)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownToothBrush)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownRustyScrewDriver)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownCardBoardSword)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownBoxingGloves)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownTapeGun)); bufferedWriter.newLine();
+
+		for (int is = 0; is < items.size(); is++)
+		{
+
+			bufferedWriter.write(Boolean.toString(items.get(is).isOwned())); bufferedWriter.newLine();
+
+		}
 
 		bufferedWriter.newLine();
-		
-		bufferedWriter.write(Boolean.toString(ownPieceOfCardboard)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownSturdyPieceOfCardboard)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownPlasticBinLid)); bufferedWriter.newLine();
-		bufferedWriter.write(Boolean.toString(ownTrashCanLid)); bufferedWriter.newLine();
-		
+
+		for (int is = 0; is < items.size(); is++)
+		{
+
+			bufferedWriter.write(Boolean.toString(items.get(is).isEquiped())); bufferedWriter.newLine();
+
+		}
+
 		bufferedWriter.newLine();
+
+		for (int fs = 0; fs < foods.size(); fs++)
+		{
+
+			bufferedWriter.write(Integer.toString(foods.get(fs).getQuanity())); bufferedWriter.newLine();
+		}
 		
-		bufferedWriter.write(onionAmmount); bufferedWriter.newLine();
-		bufferedWriter.write(marshMelloAmmount); bufferedWriter.newLine();
-		bufferedWriter.write(magicShroomAmmount); bufferedWriter.newLine();
-		bufferedWriter.write(packingPenutAmmount); bufferedWriter.newLine();
-		
-		bufferedWriter.newLine();
-		
-		//bufferedWriter.write(stamps); bufferedWriter.newLine();
-		
-		//closeSaver
+		//closeFileWriter
 		
 		bufferedWriter.close();
 		
 	}
-	
-}
 
+}

@@ -19,7 +19,7 @@ public class InitializeObjects
 				
 		//objects
 				
-		Upgrade moreBoxes = new Upgrade("More Boxes", 90, "numbOfBoxesMade", 3, false);
+		Upgrade moreBoxes = new Upgrade("More Boxes", 90, 0, 0, 0, 0, 0, 0, 3, false);
 				
 		//fillArray
 				
@@ -43,7 +43,7 @@ public class InitializeObjects
 		Item rustyScrewdriver = new Item("Rusty Screwdriver", "Weapon", 0, 10, 0, 5, 0, "An average screwdriver, but with a twist: Tetnis.", false, false);
 		Item sturdyPieceOfCardboard = new Item("Sturdy Piece of Cardboard", "Sheild", 0, 0, 8, 0, 0, "Studier than you average cardboard.", false, false);
 		Item fedExHat = new Item("Fed-Ex Hat", "Hat", 0, 0, 0, 0, 70, "A company hat that gives you the speedy delivery power of Fed-Ex.", false, false);
-		Item tapeMummyGarmets = new Item("Tape Mummy Garmets", "Clothing", 20, 0, 0, 20, -10, "Pretty cool, very uncomfortable.", false, false);
+		Item tapeMummyGarmets = new Item("Tape Mummy Garmet", "Clothing", 20, 0, 0, 20, -10, "Pretty cool, very uncomfortable.", false, false);
 		Item leftSock = new Item("Left Sock", "Shoes", 0, 0, 0, 100, 50, "A lone left sock that provides invincibility, obviously.", false, false);
 		
 		//fillArray

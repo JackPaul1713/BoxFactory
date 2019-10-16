@@ -2,6 +2,8 @@ package objects;
 
 import java.util.ArrayList;
 
+import game.Loose;
+
 public class Character
 {
 
@@ -20,10 +22,11 @@ public class Character
 	
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private ArrayList<Food> foods = new ArrayList<Food>();
+	private ArrayList<Junk> junk = new ArrayList<Junk>();
 	
 	//blueprint
 	
-	public Character(String n, int m, int h, int maxH, int stre, int d, int t, int spe, ArrayList<Item> i, ArrayList<Food> f)
+	public Character(String n, int m, int h, int maxH, int stre, int d, int t, int spe, ArrayList<Item> i, ArrayList<Food> f, ArrayList<Junk> j)
 	{
 		
 		name = n;
@@ -39,6 +42,7 @@ public class Character
 		
 		items = i;
 		foods = f;
+		junk = j;
 		
 	}
 
@@ -84,6 +88,21 @@ public class Character
 		return speed;
 	}
 	
+	public ArrayList<Item> getItems()
+	{
+		return items;
+	}
+	
+	public ArrayList<Food> getFoods()
+	{
+		return foods;
+	}
+	
+	public ArrayList<Junk> getJunk()
+	{
+		return junk;
+	}
+	
 	//setters
 	
 	public void setMoney(int money)
@@ -94,7 +113,6 @@ public class Character
 	public void setHealth(int health)
 	{
 		this.health = health;
-		//if heath <= 0, loose
 	}
 	
 	public void setMaxHealth(int maxHealth)
@@ -120,6 +138,21 @@ public class Character
 	public void setSpeed(int speed)
 	{
 		this.speed = speed;
+	}
+	
+	public void setItems(ArrayList<Item> items)
+	{
+		this.items = items;
+	}
+	
+	public void setFoods(ArrayList<Food> foods)
+	{
+		this.foods = foods;
+	}
+	
+	public void setJunk(ArrayList<Junk> junk)
+	{
+		this.junk = junk;
 	}
 	
 }

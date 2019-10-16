@@ -1,17 +1,16 @@
-New Factory
-default
+Cardboard Co.
+Richard P. Boxingwhale
 
+50
+5
+1
 0
 20
-20
 10
-100
-10
-10
-130
+5
 1
 
-0
+1000
 100
 100
 10
