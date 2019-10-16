@@ -1,7 +1,7 @@
 Cardboard Co.
 Richard P. Boxingwhale
 
-50
+10
 5
 1
 0
@@ -10,7 +10,7 @@ Richard P. Boxingwhale
 5
 1
 
-1000
+9999
 100
 100
 10
