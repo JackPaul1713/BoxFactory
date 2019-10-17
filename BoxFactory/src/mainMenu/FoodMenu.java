@@ -41,7 +41,7 @@ public class FoodMenu
 					for (int f = 0; f < foodsNumb; f++)
 					{
 						
-						System.out.println("(" + (f + 1) + ") " + foods.get(f).getName() + "(s): " + foods.get(f).getQuanity());
+						System.out.println("(" + (f + 1) + ") " + foods.get(f).getName() + "s: " + foods.get(f).getQuanity());
 						
 					}
 					

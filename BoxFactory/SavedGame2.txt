@@ -1,9 +1,9 @@
-New Factory
+*New Factory
 default
 
 0
-20
-20
+10
+5
 10
 100
 10
