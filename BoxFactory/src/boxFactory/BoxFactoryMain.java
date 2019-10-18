@@ -19,12 +19,12 @@ public class BoxFactoryMain
 		
 		SetScreenSize.setScreenSize();
 		
-		while(playing = true)
+		while(playing)
 		{
 			
 			playing = TitleScreen.titleScreen();
 			
-			if(playing = true)
+			if(playing)
 			{
 				
 				gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
