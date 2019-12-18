@@ -1,7 +1,6 @@
 package boxFactory;
 
 import java.io.IOException;
-
 import game.BoxFactoryGame;
 
 public class BoxFactoryMain
