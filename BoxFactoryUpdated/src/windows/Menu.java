@@ -11,12 +11,14 @@ public class Menu extends Window
 		System.out.println(title);
 		System.out.println("");
 		
-		for (int i = 0; i > options.length; i++)
+		for (int i = 0; i < options.length; i++)
 		{
 			
 			System.out.println("(" + (i + 1) + ") " + options[i]);
 			
 		}
+		
+		System.out.println("(e) Exit");
 		
 		size = size - options.length;
 		
@@ -27,7 +29,6 @@ public class Menu extends Window
 			
 		}
 		
-		System.out.println("(e) Exit");
 		System.out.println("");
 		System.out.print("Input: ");
 		

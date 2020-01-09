@@ -18,9 +18,8 @@ public class MainMenu
 		
 		//variables
 		
-		int mainMenuSelection = 0;
-		
-		Scanner intInput = new Scanner(System.in);
+		String mainMenuSelection;
+		Scanner strInput = new Scanner(System.in);
 		
 		//action
 
@@ -37,11 +36,14 @@ public class MainMenu
 		System.out.println("(5) Upgrades");
 		System.out.println("(6) Shop");
 		System.out.println("(7) Save");
-		System.out.println("(8) Exit");
+		System.out.println("(e) Exit");
 		System.out.println("");
 		System.out.println("");
 		System.out.print("Input: ");
-		mainMenuSelection = intInput.nextInt();
+		mainMenuSelection = strInput.nextLine();
+		game.setDirectoryLocation(mainMenuSelection);
+		
+		Directory.directory(game);
 
 	}
 	

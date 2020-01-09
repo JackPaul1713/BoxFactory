@@ -17,19 +17,19 @@ public class BoxFactoryMain
 		
 		//variables
 		
+		boolean cont = true;
 		String gameSelection = "";
 		Game game;
 		
-		//action
+		//startUp
 		
 		SetScreenSize.setScreenSize();
 		TitleScreen.titleScreen();
-		gameSelection = GameSelect.gameSelect(); //getLoadGameDataInfo
 		
-		game = LoadGame.loadGame(gameSelection);
-		//BoxFactoryGame.boxFactoryGame(gameSelection); //loadGameData, game, loose.true exit.false
-
-		//Goodbye.goodbye();
+		//game
+		
+		game = GameSelect.gameSelect();
+		Directory.directory(game);
 		
 	}
 	

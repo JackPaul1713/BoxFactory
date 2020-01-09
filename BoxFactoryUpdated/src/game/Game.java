@@ -12,7 +12,7 @@ public class Game
 	private Factory factory;
 	private Character character;
 	private String gameSelection;
-	private int directoryLocation = 0;
+	private String directoryLocation = "";
 	
 	private ArrayList<Window> windows = new ArrayList<Window>();
 	
@@ -43,7 +43,7 @@ public class Game
 		return gameSelection;
 	}
 	
-	public int getDirectoryLocation()
+	public String getDirectoryLocation()
 	{
 		return directoryLocation;
 	}
@@ -70,9 +70,20 @@ public class Game
 		this.gameSelection = gameSelection;
 	}
 	
-	public void setDirectoryLocation(int directoryLocation)
+	public void setDirectoryLocation(String locationChange)
 	{
-		this.directoryLocation = directoryLocation;
+		if (locationChange.equals("cls"))
+		{
+			this.directoryLocation = "1";
+		}
+		else if (locationChange.equals("e"))
+		{
+			this.directoryLocation = this.directoryLocation.substring(0, this.directoryLocation.length()-1);
+		} 
+		else
+		{
+			this.directoryLocation = this.directoryLocation + locationChange;
+		}
 	}
 	
 	public void setWindows(ArrayList<Window> windows)

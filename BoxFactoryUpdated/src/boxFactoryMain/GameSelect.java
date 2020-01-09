@@ -5,16 +5,21 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import game.*;
+import editData.LoadGame;
+
 public class GameSelect
 {
 
-	public static String gameSelect() throws IOException
+	public static Game gameSelect() throws IOException
 	{
 		
 		//variables
 		
 		String gameSelection = "";
 		Scanner strInput = new Scanner(System.in);
+		
+		Game game;
 		
 		String defaultSave = "DefaultSave.txt";
 		String savedGame1 = "SavedGame1.txt";
@@ -33,7 +38,7 @@ public class GameSelect
 		FileReader fileReader3 = new FileReader(savedGame3);
 		BufferedReader bufferedReader3 = new BufferedReader(fileReader3);
 		
-		//action
+		//getSelection
 		
 		System.out.println("[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
 		System.out.println("[][][][][][][][][][][] Game Selection [][][][][][][][][][][]");
@@ -59,9 +64,28 @@ public class GameSelect
 		bufferedReader2.close();
 		bufferedReader3.close();
 		
+		//checkSelection
+		
+		/*if (!gameSelection.substring(0).equals("n") && !gameSelection.substring(0).equals("l") && !gameSelection.substring(0).equals("d"))
+		{
+			
+			if (!gameSelection.substring(1).equals("1") && !gameSelection.substring(1).equals("2") && !gameSelection.substring(1).equals("3"))
+			{
+				
+				gameSelection = "";
+				game = GameSelect.gameSelect();
+				
+			}
+			
+		}*/
+		
+		//loadSelection
+		
+		game = LoadGame.loadGame(gameSelection);
+		
 		//return
 		
-		return(gameSelection);
+		return(game);
 		
 	}
 	

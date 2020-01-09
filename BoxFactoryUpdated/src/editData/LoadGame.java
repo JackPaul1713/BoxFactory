@@ -31,6 +31,8 @@ public class LoadGame
 		
 		game = LoadSave.loadSave(gameSelection, windows, upgrades, items, foods, junk);
 		
+		game.setDirectoryLocation("1");
+		
 		return(game);
 		
 	}
