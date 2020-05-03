@@ -12,15 +12,11 @@ import mobs.*;
 public class BoxFactoryMain
 {
 
+	static Game game;
+	
 	public static void main(String[] args) throws IOException, InterruptedException
 	{
-		
-		//variables
-		
-		boolean cont = true;
-		String gameSelection = "";
-		Game game;
-		
+
 		//startUp
 		
 		SetScreenSize.setScreenSize();
@@ -28,8 +24,8 @@ public class BoxFactoryMain
 		
 		//game
 		
-		game = GameSelect.gameSelect();
-		Directory.directory(game);
+		GameSelect.gameSelect();
+		//Directory.directory();
 		
 	}
 	
